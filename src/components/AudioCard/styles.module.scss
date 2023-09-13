@@ -1,0 +1,97 @@
+@use "abstracts" as *;
+
+.container {
+  list-style: none;
+  display: flex;
+  border-radius: 8px;
+  background: $color-pink-800;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+  
+  a {
+    box-shadow: 2px 2px 11px rgba(0, 0, 0, 0.35);
+  
+    transition: transform 0.5s;
+  
+  
+    > div:nth-child(1) {
+      display: flex;
+      flex-direction: column;
+  
+      padding: 6px 14px 14px;
+  
+      span {
+        font-size: 22px;
+        font-weight: 500;
+        margin-bottom: 8px;
+        color: $color-gray-100;
+        width: 200px;
+        height: 75px;
+        vertical-align: middle;
+  
+        display: flex;
+        align-items: center;
+        justify-content: center;
+  
+        text-align: center;
+      }
+  
+      img {
+        width: 200px;
+        height: 185px;
+        border-radius: 8px;
+        object-fit: cover;
+        border: 2px solid $color-pink-400;
+      }
+    }
+    
+  }
+
+  > div:nth-child(2) {
+    display: flex;
+    position: relative;
+  }
+}
+
+.container-button {
+  --height-progress: 0;
+
+  display: flex;
+      align-items: center;
+
+  > button {
+    order: 3;
+    border: none;
+    border-radius: 0px 8px 8px 0px;
+    cursor: pointer;
+    height: 100%;
+    padding: 5px;
+  }
+
+  svg {
+    fill: $color-pink-500;
+  }
+
+  &::after, &::before {
+    content: '';
+    width: 10px;
+    height: 100%;
+    border-radius: 3px 0px 0px 3px;
+  }
+
+  &::before {
+    position: absolute;
+    align-self: flex-start;
+    max-height: var(--height-progress);
+    z-index: 1;
+    background-color: $color-pink-300;
+    transition: max-height 1s;
+  }
+
+  &::after{
+    background-color: $color-gray-400;
+    box-shadow: 2px 2px 11px rgba(0, 0, 0, 0.35);
+  }
+}

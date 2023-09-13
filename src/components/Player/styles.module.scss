@@ -1,0 +1,83 @@
+@use "abstracts" as *;
+
+.container {
+  order: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 0.5rem;
+
+  border-top: 3px solid $color-pink-900;
+  background: $color-blue-900;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  > div {
+    display: flex;
+    align-items: center;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+  }
+
+  button:nth-child(2) {
+    color: $color-pink-500;
+  }
+}
+
+.player-scroll {
+  width: 60rem;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 0.7rem;
+  background: $color-gray-400; 
+  outline: none; 
+  border-radius: 0.5rem;
+  -webkit-transition: .2s; 
+  transition: background .2s;
+  background-image: linear-gradient($color-pink-600, $color-pink-600);
+  background-size: 10% 100%;
+  background-repeat: no-repeat;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+  }
+
+  &::-moz-range-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+  }
+  
+  &:hover {
+    background-image: linear-gradient($color-pink-800, $color-pink-800);
+
+    &::-webkit-slider-thumb {
+      width: 1.5rem; 
+      height: 1.5rem;
+      border-radius: 50%; 
+      background: $color-pink-800; 
+      cursor: pointer;
+      transition: background .3s ease-in-out;
+    }
+
+    &::-moz-range-thumb {
+      width: 1.5rem; 
+      height: 1.5rem;
+      background: $color-pink-800;
+      cursor: pointer;
+      transition: background .3s ease-in-out;
+    }
+  }
+}
+
+.container-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
